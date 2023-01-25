@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
+
+@font-face {
+    font-family: "Minecraft Enchantment Table";
+    src: url(../fonts/minecraft-enchantment.ttf);
+}
+
+:root {
+    --first-color: #78552f;
+    --second-color: #544121;
+    --third-color: #fff1d8;
+    --fourth-color: #ffe2b1;
+    --fifth-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s cubic-bezier(0.42, 0.26, 0.49, 1.15);
+    user-select: text;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    background: linear-gradient(20deg, var(--third-color) 0%, var(--first-color) 40%, var(--first-color) 60%, var(--third-color) 100%);
+    background-size: 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+a:hover {
+    background-position: 100%;
+}
+
+enchantment {
+    font-family: "Minecraft Enchantment Table";
+    font-weight: 0.1rem;
+}
+
+.topbar {
+    width: 100%;
+    max-height: 50px;
+    padding: 0.3rem 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    background: var(--fourth-color);
+    z-index: 10;
+}
+
+.topbar.sticky {
+    position: fixed;
+}
+
+.topbar > * {
+    display: flex;
+    cursor: pointer;
+}
+
+.topbar .logo svg {
+    stroke: var(--first-color);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.topbar .logo:hover svg:nth-child(1), .topbar .logo svg:nth-child(2) {
+    display: none;
+}
+
+.topbar .logo:hover svg:nth-child(1) + svg:nth-child(2) {
+    display: block;
+}
+
+.topbar .account svg {
+    fill: var(--first-color);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: -10%;
+    height: 100%;
+    width: 5vw;
+    z-index: 9;
+}
+
+.sidebar.animate {
+    animation: rightToLeft 1s ease forwards;
+}
+
+@keyframes rightToLeft {
+    from {
+        right: -10%;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+.sidebar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar ul li {
+    list-style: none;
+    width: 14px;
+    height: 14px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar ul li a {
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 2rem;
+    background: #fff;
+    pointer-events: none;
+}
+
+.sidebar ul li:hover a {
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: #ffffff99;
+}
+
+.sidebar ul li:hover a:hover {
+    width: 12px;
+    height: 12px;
+    background: #ffffff99;
+}
+
+.sidebar ul li.active a {
+    width: 14px;
+    height: 14px;
+    background: #fff;
+}
+
+.sidebar ul li.active:hover a:hover {
+    width: 14px;
+    height: 14px;
+    background: #ffffff99;
+}
+
+.slide-up {
+    top: 10%;
+    align-items: flex-end;
+}
+
+.slide-down {
+    top: 90%;
+    align-items: flex-start;
+}
+
+.slide-down, .slide-up {
+    position: absolute;
+    width: 4rem;
+    height: 3rem;
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    scale: 0.5;
+}
+
+.slide-down::before, .slide-down::after,
+.slide-up::before, .slide-up::after {
+    content: "";
+    background: white;
+    width: 5px;
+    height: 30px;
+    position: absolute;
+    border-radius: 2rem;
+}
+
+.slide-down::before, .slide-up::after {
+    transform: rotate(-50deg) translateX(-320%);
+}
+
+.slide-down::after {
+    transform: rotate(50deg) translateX(320%);
+}
+
+.slide-up::before {
+    transform: rotate(50deg) translateX(-320%);
+}
+
+.slide-up::after {
+    transform: rotate(-50deg) translateX(320%);
+}
+
+.slide-down.main {
+    scale: 1;
+    left: 50%;
+}
+
+.slide-down.animate {
+    animation: centerToRight 1s ease forwards;
+}
+
+.slide-down.animate.reversed {
+    animation: centerToRight 1s ease forwards reverse;
+}
+
+@keyframes centerToRight {
+    from {
+        right: 1000%;
+        scale: 1;
+        translate: 100%;
+    }
+
+    to {
+        right: 10%;
+        scale: 0.5;
+        translate: 0;
+    }
+}
+
+header {
+    --banner-height: 100vh;
+    width: 100%;
+    height: var(--banner-height);
+    display: flex;
+}
+
+header img {
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+header section {
+    width: 100%;
+    height: var(--banner-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    color: var(--third-color);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(2px);
+}
+
+header section > * {
+    margin: 0;
+    padding: 0.5rem 5rem;
+    display: flex;
+}
+
+header section p {
+    display: block;
+    font-size: 1.2rem;
+    padding-right: 55%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header section h1 {
+    font-size: 8rem;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--fourth-color);
+    line-height: 0.9;
+}
+
+main section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 4rem 1.5rem 1rem;
+    font-size: 2rem;
+    color: var(--fifth-color);
+    background: linear-gradient(135deg, var(--first-color), var(--second-color));
+    overflow: hidden;
+}
+
+main section > h1 {
+    position: absolute;
+    top: 1rem;
+    left: 2.5rem;
+}
+
+main #recomended {
+    background: linear-gradient(45deg, var(--first-color), var(--second-color));
+    overflow: hidden;
+    justify-content: center;
+}
+
+main #recomended > h1 {
+    color: var(--fifth-color);
+}
+
+main #recomended .posts {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    margin-top: 4rem;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    overflow-y: scroll;
+}
+
+main #recomended .posts .post {
+    /* width: 300px;
+    height: 400px; */
+    background-color: var(--second-color);
+    color: transparent;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+main #recomended .posts .post .user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+main #recomended .posts .post .user h1 {
+    font-size: 2rem;
+    color: var(--third-color);
+}
+
+main #recomended .posts .post .user svg {
+    width: 3rem;
+    fill: var(--third-color);
+}
+
+main #recomended .posts .post .content {
+    font-size: 1.2rem;
+    padding: 1rem 1.2rem;
+}
+
+main #recomended .posts .post .content p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 15;
+    background: linear-gradient(var(--fifth-color), var(--fourth-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+main #recomended .posts .post .content a {
+    position: relative;
+    top: 0.6rem;
+}
+
+main #features {
+    align-items: flex-start;
+    justify-content: center;
+}
+
+main #features > div {
+    width: 100%;
+    height: 100%;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,66 +1,167 @@
-/* parallax */
-const stars = document.getElementById("stars");
-const moon = document.getElementById("moon");
-const mountains_front = document.getElementById("mountains_front");
-const mountains_behind = document.getElementById("mountains_behind");
-const text = document.getElementById("text");
-const account = document.getElementById("account");
-const search = document.getElementById("search");
-const parallaxText = document.getElementById("text")
+fetch("./settings.json")
+    .then((e) => e.json())
+    .then((data) => {
+        document.title = data.title;
+}).catch((e) => console.log(e));
 
-window.addEventListener("scroll", () => {
-    const scrollValue = window.scrollY;
+window.onload = () => {
+    window.location.hash = ""
+    window.scroll(0, 0)
+}
 
-    if (scrollValue <= 750) {
-      stars.style.left = scrollValue * 0.25 + "px";
-      text.style.right = scrollValue * 4 + "px";
-    }
+var link = document.querySelector("#links")
+var links = link.querySelectorAll("li")
 
-    if (scrollValue <= 520) {
-        moon.style.top = scrollValue * 1.05 + "px";
-    }
-    if (scrollValue <= 650) {
-        mountains_behind.style.top = scrollValue * 0.2 + "px";
-    }
+links.forEach(li => {
 
-    if (scrollValue >= 50 && scrollValue <= 485) {
-        search.style.top = (scrollValue * -0.08) + 49 + "%"
-    } else {
-        search.style.top = null
-    }
+    li.addEventListener("click", (selectedItem) => {
 
-    if (scrollValue <= 65) {
-        parallaxText.style.display = "none"
-        parallaxText.style.visibility = "hidden"
-    } else {
-        parallaxText.style.display = null
-        parallaxText.style.visibility = null
-    }
+        links.forEach(li => {
+
+            refresh(li.querySelector("a"))
+            refresh(li)
+
+        })
+
+        if (selectedItem.target.classList.contains("active")) {
+
+        } else {
+
+            selectedItem.target.classList.add("active")
+            selectedItem.target.parentElement.classList.add("active")
+            
+            if (selectedItem.target == document.querySelector("a")) {
+                
+                window.location.replace(selectedItem.target.href)
+
+            } else {
+
+                window.location.replace(selectedItem.target.querySelector("a").href)
+
+            }
+        }
+
+    })
+
+    li
     
-    mountains_front.style.top = scrollValue * 0 + "px";
-
-    console.log(scrollValue);
 })
 
-/* device type */
-const getDeviceType = () => {
-  const ua = navigator.userAgent;
-  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-    return "tablet";
-  }
-  if (
-    /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
-      ua
-    )
-  ) {
-    return "mobile";
-  }
-  return "desktop";
-};
+function refresh(item) {
+    
+    item.classList.remove("active")
 
-const params = new Proxy(new URLSearchParams(window.location.search), {
-  get: (searchParams, prop) => searchParams.get(prop),
-});
+}
 
-console.log(params.s);
-  
+const slideDownButton = document.querySelector(".slide-down")
+const slideUpButton = document.querySelector(".slide-up")
+const sidebar = document.querySelector("nav.sidebar")
+
+function slideUpChange() {
+    if (window.location.hash === "") {
+        slideUpButton.style.right = "-100%"
+    } else {
+        slideUpButton.style.right = "0%"
+    }
+}
+
+var slideDownCheck = false;
+
+function slideDownChange() {
+    if (slideDownCheck === false) {
+        slideDownButton.classList.remove("main")
+        slideDownButton.classList.add("animate")
+        sidebar.appendChild(slideDownButton)
+        sidebar.classList.add("animate")
+    }
+
+    slideDownCheck = true
+}
+
+function slideDown() {
+
+    switch (window.location.hash) {
+        case "":
+            window.location.replace("#recomended")
+            break;
+    
+        case "#recomended":
+            window.location.replace("#features")
+            break;
+
+        case "#features":
+            window.location.replace("#prefer")
+            break;
+
+        case "#prefer":
+            window.location.replace("#footer")
+            break;
+    }
+
+    links.forEach(link => {
+
+        refresh(link.querySelector("a"))
+        refresh(link)
+
+    })
+
+    refreshButtons()
+
+}
+
+function slideUp() {
+
+    switch (window.location.hash) {
+        case "#recomended":
+            window.location.replace("#")
+            break;
+    
+        case "#features":
+            window.location.replace("#recomended")
+            break;
+
+        case "#prefer":
+            window.location.replace("#features")
+            break;
+
+        case "#footer":
+            window.location.replace("#prefer")
+            break;
+    }
+
+    links.forEach(link => {
+
+        refresh(link.querySelector("a"))
+        refresh(link)
+
+    })
+
+    refreshButtons()
+}
+
+function refreshButtons() {
+
+    switch (window.location.hash) {
+        case "":
+            links[0].classList.add("active")
+            slideUpButton.style.top = "10%"
+            break;
+    
+        case "#recomended":
+            links[1].classList.add("active")
+            slideUpButton.style.top = "5%"
+            break;
+
+        case "#features":
+            links[2].classList.add("active")
+            break;
+
+        case "#prefer":
+            links[3].classList.add("active")
+            break;
+
+        case "#footer":
+            links[4].classList.add("active")
+            break;
+    }
+}

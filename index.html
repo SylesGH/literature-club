@@ -4,48 +4,129 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Literature Club</title>
+    <title>Welcome</title>
 
-    <link rel="stylesheet" href="./style/main.css">
-    <script defer src="./src/index.js"></script>
+    <link rel="stylesheet" href="./style/index.css">
+    <script src="./src/index.js" defer></script>
 </head>
-<body onload="window.scrollTo(0, 0);">
-    <nav class="top-navbar" id="top-navbar">
-        <div class="logo">LOGO</div>
-        <div class="social">
-            <div class="account" id="account">
-                <svg viewBox="0 0 20 20"><path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0Zm0 3c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3Zm0 14.2c-2.5 0-4.7-1.3-6-3.2 0-2 4-3.1 6-3.1s6 1.1 6 3.1c-1.3 1.9-3.5 3.2-6 3.2Z" fill-rule="evenodd"/></svg>
-            </div>
+<body>
+    <div class="topbar">
+        <div class="logo">
+            <svg width="3rem" viewBox="0 0 24 24" fill="none"><path d="M4.997 18.75a2.25 2.25 0 0 1 2.25-2.25H19.2"/><path d="M7.25 3H19.2v18H7.25A2.25 2.25 0 0 1 5 18.75V5.25A2.25 2.25 0 0 1 7.25 3Z"/></svg>
+            <svg width="3rem" viewBox="0 0 24 24" fill="none"><path d="M3 3h5.4A3.6 3.6 0 0 1 12 6.6V21a2.7 2.7 0 0 0-2.7-2.7H3V3Zm18 0h-5.4A3.6 3.6 0 0 0 12 6.6v14.1a2.7 2.7 0 0 1 2.7-2.7H21V3Z"/></svg>
         </div>
+        <div class="account">
+            <svg width="3rem" viewBox="0 0 512 512"><path d="M228.5 44.5c-70.8 9.3-132.6 53.8-164 118-28.9 59.2-28.9 127.8 0 187 32.3 66.1 95.6 110.4 169.4 118.5 17 1.9 44.2.8 61.4-2.4 75.5-14.3 138-68.5 162.6-141.3 14.9-43.9 14.9-92.7 0-136.6C431.4 109.5 361.5 53.2 279.5 44c-12.2-1.3-38.7-1.1-51 .5zm41 96c18.1 4.7 33.3 19.9 38 38 8.7 33.5-16.8 66.5-51.3 66.5-14.6 0-27.5-5.3-37.7-15.5-16.7-16.7-20.4-41.9-9.2-62.9 6.2-11.9 19.7-22.5 32.8-26 7.2-1.9 20.1-2 27.4-.1zm71.6 149.8c2.4 1.3 5.8 4.3 7.4 6.6 2.7 3.8 3 5.2 3.3 13.2.5 11.5-2 20.3-8.1 28.5-11.1 15-28.6 25.2-54.1 31.2-10.3 2.5-12.7 2.7-33.6 2.7s-23.3-.2-33.6-2.7c-19.6-4.6-34.5-11.8-45.8-22-12-10.7-17.1-22.6-16.5-38.1.4-7.6.7-9 3.4-12.8 1.7-2.3 5-5.3 7.4-6.6l4.4-2.3h161.4l4.4 2.3z"/></svg>
+        </div>
+    </div>
+    <nav class="sidebar">
+        <div class="slide-up" onclick="slideUp(); slideUpChange()"></div>
+
+        <ul id="links">
+            <li class="active">
+                <a href="#"></a>
+            </li>
+            <li>
+                <a href="#recomended"></a>
+            </li>
+            <li>
+                <a href="#features"></a>
+            </li>
+            <li>
+                <a href="#prefer"></a>
+            </li>
+            <li>
+                <a href="#footer"></a>
+            </li>
+        </ul>
     </nav>
-    <header class="search" id="search">
-        <h1 class="text">Merhaba</h1>
-        <form class="search" id="search-form">
-            <input class="search" id="search-input" name="s" type="text" autocomplete="off" placeholder="Ara..." spellcheck="false">
-            <label for="search" class="search" id="search-label">
-                <svg viewBox="0 0 487.95 487.95" style="enable-background:new 0 0 487.95 487.95"><path d="m481.8 453-140-140.1c27.6-33.1 44.2-75.4 44.2-121.6C386 85.9 299.5.2 193.1.2S0 86 0 191.4s86.5 191.1 192.9 191.1c45.2 0 86.8-15.5 119.8-41.4l140.5 140.5c8.2 8.2 20.4 8.2 28.6 0 8.2-8.2 8.2-20.4 0-28.6zM41 191.4c0-82.8 68.2-150.1 151.9-150.1s151.9 67.3 151.9 150.1-68.2 150.1-151.9 150.1S41 274.1 41 191.4z"/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/></svg>
-                Ara...
-            </label>
-        </form>
-    </header>
-    <main class="part1">
-        <section class="parallax">
-            <img src="./img/stars.webp" class="stars" id="stars">
-            <img src="./img/moon.webp" class="moon" id="moon">
-            <img src="./img/mountains_behind.webp" class="mountains_behind" id="mountains_behind">
-            <h2 class="text hide" id="text">Yeah boiiiiii</h2>
-            <img src="./img/mountains_front.webp" class="mountains_front" id="mountains_front">
+    <header>
+        <img src="https://www.readers.com/blog/wp-content/uploads/2012/06/fendi_rose-3-1024x678.jpg" alt="reload">
+        <section id="banner">
+            <h1>Merhaba</h1>
+            <p>Baya kolay aslında 2 dk ya biter gibi sagdGS HADvshaGDVSHAdbsam sadsatest123 ow shit nigga <enchantment>Every I go, I see his face.</enchantment></p>
         </section>
-        <div>
-            <h2>Rest of the page</h2>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est reiciendis deserunt voluptas soluta, sint obcaecati magni doloremque, placeat amet unde asperiores ducimus! Voluptates quis soluta in ut, modi aliquam.
-            Animi voluptatum voluptate nemo doloribus totam minus architecto cum sapiente rem! Sunt aliquam, eligendi expedita iure, deserunt quaerat voluptatum nam nisi non tempore aliquid nulla temporibus error, voluptatibus ad repellat!
-            Ipsum, dolores totam consequuntur, ipsam porro nulla iure nesciunt accusamus eum atque ab enim voluptates dolorem? Saepe nam consequuntur odit veritatis dolore magni, dolores totam, ut cum, dicta ipsa adipisci? <br><br> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam repellat iste asperiores, molestiae, temporibus error dolores, incidunt necessitatibus reiciendis obcaecati excepturi animi quam accusantium autem aspernatur facere neque mollitia non?
-            Excepturi libero temporibus officia minima possimus magni repellat, vel blanditiis. Magni, unde ipsam molestias dolore, commodi distinctio vel sunt laborum voluptatem culpa dolores non recusandae quos ut id eius accusantium.
-            Corporis voluptas unde ratione culpa perspiciatis quasi placeat doloribus, eos sapiente veritatis dolor vero nobis assumenda voluptate dolore inventore consectetur recusandae facere aliquam, nemo eveniet. Animi, veniam eum? Fuga, sint! <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, voluptatibus a incidunt vitae dignissimos veniam atque quae quidem iure temporibus at laborum dolorum quas aut minima. Odit odio explicabo iste?
-            Vero inventore aut accusamus sapiente qui laudantium animi deleniti dolore a labore, officia culpa praesentium error ut, earum officiis esse molestiae est explicabo magnam perferendis temporibus maiores odio. At, quidem?
-            Optio ratione temporibus ipsa fugiat consequuntur magnam dignissimos sed, eius eaque quae. Dolore reiciendis rem adipisci voluptatem exercitationem, magni, esse cupiditate delectus cum quas nisi inventore? Ex ab voluptates temporibus?</h3>
-        </div>
+        
+        <div class="slide-down main" onclick="slideDown(); slideDownChange(); slideUpChange()"></div>
+    </header>
+    <main>
+        <section id="recomended">
+            <h1>Recomended</h1>
+            <div class="posts">
+                <div class="post">
+                    <div class="user">
+                        <svg width="3rem" viewBox="0 0 512 512"><path d="M228.5 44.5c-70.8 9.3-132.6 53.8-164 118-28.9 59.2-28.9 127.8 0 187 32.3 66.1 95.6 110.4 169.4 118.5 17 1.9 44.2.8 61.4-2.4 75.5-14.3 138-68.5 162.6-141.3 14.9-43.9 14.9-92.7 0-136.6C431.4 109.5 361.5 53.2 279.5 44c-12.2-1.3-38.7-1.1-51 .5zm41 96c18.1 4.7 33.3 19.9 38 38 8.7 33.5-16.8 66.5-51.3 66.5-14.6 0-27.5-5.3-37.7-15.5-16.7-16.7-20.4-41.9-9.2-62.9 6.2-11.9 19.7-22.5 32.8-26 7.2-1.9 20.1-2 27.4-.1zm71.6 149.8c2.4 1.3 5.8 4.3 7.4 6.6 2.7 3.8 3 5.2 3.3 13.2.5 11.5-2 20.3-8.1 28.5-11.1 15-28.6 25.2-54.1 31.2-10.3 2.5-12.7 2.7-33.6 2.7s-23.3-.2-33.6-2.7c-19.6-4.6-34.5-11.8-45.8-22-12-10.7-17.1-22.6-16.5-38.1.4-7.6.7-9 3.4-12.8 1.7-2.3 5-5.3 7.4-6.6l4.4-2.3h161.4l4.4 2.3z"/></svg>
+                        <h1>Username</h1>
+                    </div>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga magni reiciendis amet, consequatur quia a harum nostrum iure corrupti quas ut odit ad dolorem animi velit earum veniam fugit sint.
+                        Magnam, veritatis exercitationem ad itaque consectetur facilis mollitia dolor provident optio sequi, vero repellat a corrupti? Adipisci officia excepturi quisquam, aspernatur porro rem commodi dignissimos, aliquid fugit natus, nam eaque!
+                        Praesentium soluta neque laborum nostrum pariatur sit, libero, cupiditate cum aut a non nesciunt quaerat vero veniam commodi officiis accusamus tempore suscipit illo! Aliquid voluptatum quisquam odio, saepe consequuntur placeat.
+                        A quo fugit aliquam molestiae omnis, nemo earum! Quasi sequi obcaecati sed nobis veniam consequuntur nemo omnis aut, numquam nulla repellendus nihil impedit? Maiores numquam pariatur impedit, at illum placeat.
+                        Autem nesciunt dolorem ipsam, at ea soluta consectetur? Facilis, animi laboriosam harum magnam autem quod, necessitatibus maxime, excepturi provident unde ad quasi voluptate. Vel, distinctio facilis. Totam aliquam eius ut.</p>
+                        <a href="">Read more</a>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="user">
+                        <svg width="3rem" viewBox="0 0 512 512"><path d="M228.5 44.5c-70.8 9.3-132.6 53.8-164 118-28.9 59.2-28.9 127.8 0 187 32.3 66.1 95.6 110.4 169.4 118.5 17 1.9 44.2.8 61.4-2.4 75.5-14.3 138-68.5 162.6-141.3 14.9-43.9 14.9-92.7 0-136.6C431.4 109.5 361.5 53.2 279.5 44c-12.2-1.3-38.7-1.1-51 .5zm41 96c18.1 4.7 33.3 19.9 38 38 8.7 33.5-16.8 66.5-51.3 66.5-14.6 0-27.5-5.3-37.7-15.5-16.7-16.7-20.4-41.9-9.2-62.9 6.2-11.9 19.7-22.5 32.8-26 7.2-1.9 20.1-2 27.4-.1zm71.6 149.8c2.4 1.3 5.8 4.3 7.4 6.6 2.7 3.8 3 5.2 3.3 13.2.5 11.5-2 20.3-8.1 28.5-11.1 15-28.6 25.2-54.1 31.2-10.3 2.5-12.7 2.7-33.6 2.7s-23.3-.2-33.6-2.7c-19.6-4.6-34.5-11.8-45.8-22-12-10.7-17.1-22.6-16.5-38.1.4-7.6.7-9 3.4-12.8 1.7-2.3 5-5.3 7.4-6.6l4.4-2.3h161.4l4.4 2.3z"/></svg>
+                        <h1>Username</h1>
+                    </div>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga magni reiciendis amet, consequatur quia a harum nostrum iure corrupti quas ut odit ad dolorem animi velit earum veniam fugit sint.
+                        Magnam, veritatis exercitationem ad itaque consectetur facilis mollitia dolor provident optio sequi, vero repellat a corrupti? Adipisci officia excepturi quisquam, aspernatur porro rem commodi dignissimos, aliquid fugit natus, nam eaque!
+                        Praesentium soluta neque laborum nostrum pariatur sit, libero, cupiditate cum aut a non nesciunt quaerat vero veniam commodi officiis accusamus tempore suscipit illo! Aliquid voluptatum quisquam odio, saepe consequuntur placeat.
+                        A quo fugit aliquam molestiae omnis, nemo earum! Quasi sequi obcaecati sed nobis veniam consequuntur nemo omnis aut, numquam nulla repellendus nihil impedit? Maiores numquam pariatur impedit, at illum placeat.
+                        Autem nesciunt dolorem ipsam, at ea soluta consectetur? Facilis, animi laboriosam harum magnam autem quod, necessitatibus maxime, excepturi provident unde ad quasi voluptate. Vel, distinctio facilis. Totam aliquam eius ut.</p>
+                        <a href="">Read more</a>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="user">
+                        <svg width="3rem" viewBox="0 0 512 512"><path d="M228.5 44.5c-70.8 9.3-132.6 53.8-164 118-28.9 59.2-28.9 127.8 0 187 32.3 66.1 95.6 110.4 169.4 118.5 17 1.9 44.2.8 61.4-2.4 75.5-14.3 138-68.5 162.6-141.3 14.9-43.9 14.9-92.7 0-136.6C431.4 109.5 361.5 53.2 279.5 44c-12.2-1.3-38.7-1.1-51 .5zm41 96c18.1 4.7 33.3 19.9 38 38 8.7 33.5-16.8 66.5-51.3 66.5-14.6 0-27.5-5.3-37.7-15.5-16.7-16.7-20.4-41.9-9.2-62.9 6.2-11.9 19.7-22.5 32.8-26 7.2-1.9 20.1-2 27.4-.1zm71.6 149.8c2.4 1.3 5.8 4.3 7.4 6.6 2.7 3.8 3 5.2 3.3 13.2.5 11.5-2 20.3-8.1 28.5-11.1 15-28.6 25.2-54.1 31.2-10.3 2.5-12.7 2.7-33.6 2.7s-23.3-.2-33.6-2.7c-19.6-4.6-34.5-11.8-45.8-22-12-10.7-17.1-22.6-16.5-38.1.4-7.6.7-9 3.4-12.8 1.7-2.3 5-5.3 7.4-6.6l4.4-2.3h161.4l4.4 2.3z"/></svg>
+                        <h1>Username</h1>
+                    </div>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga magni reiciendis amet, consequatur quia a harum nostrum iure corrupti quas ut odit ad dolorem animi velit earum veniam fugit sint.
+                        Magnam, veritatis exercitationem ad itaque consectetur facilis mollitia dolor provident optio sequi, vero repellat a corrupti? Adipisci officia excepturi quisquam, aspernatur porro rem commodi dignissimos, aliquid fugit natus, nam eaque!
+                        Praesentium soluta neque laborum nostrum pariatur sit, libero, cupiditate cum aut a non nesciunt quaerat vero veniam commodi officiis accusamus tempore suscipit illo! Aliquid voluptatum quisquam odio, saepe consequuntur placeat.
+                        A quo fugit aliquam molestiae omnis, nemo earum! Quasi sequi obcaecati sed nobis veniam consequuntur nemo omnis aut, numquam nulla repellendus nihil impedit? Maiores numquam pariatur impedit, at illum placeat.
+                        Autem nesciunt dolorem ipsam, at ea soluta consectetur? Facilis, animi laboriosam harum magnam autem quod, necessitatibus maxime, excepturi provident unde ad quasi voluptate. Vel, distinctio facilis. Totam aliquam eius ut.</p>
+                        <a href="">Read more</a>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="user">
+                        <svg width="3rem" viewBox="0 0 512 512"><path d="M228.5 44.5c-70.8 9.3-132.6 53.8-164 118-28.9 59.2-28.9 127.8 0 187 32.3 66.1 95.6 110.4 169.4 118.5 17 1.9 44.2.8 61.4-2.4 75.5-14.3 138-68.5 162.6-141.3 14.9-43.9 14.9-92.7 0-136.6C431.4 109.5 361.5 53.2 279.5 44c-12.2-1.3-38.7-1.1-51 .5zm41 96c18.1 4.7 33.3 19.9 38 38 8.7 33.5-16.8 66.5-51.3 66.5-14.6 0-27.5-5.3-37.7-15.5-16.7-16.7-20.4-41.9-9.2-62.9 6.2-11.9 19.7-22.5 32.8-26 7.2-1.9 20.1-2 27.4-.1zm71.6 149.8c2.4 1.3 5.8 4.3 7.4 6.6 2.7 3.8 3 5.2 3.3 13.2.5 11.5-2 20.3-8.1 28.5-11.1 15-28.6 25.2-54.1 31.2-10.3 2.5-12.7 2.7-33.6 2.7s-23.3-.2-33.6-2.7c-19.6-4.6-34.5-11.8-45.8-22-12-10.7-17.1-22.6-16.5-38.1.4-7.6.7-9 3.4-12.8 1.7-2.3 5-5.3 7.4-6.6l4.4-2.3h161.4l4.4 2.3z"/></svg>
+                        <h1>Username</h1>
+                    </div>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga magni reiciendis amet, consequatur quia a harum nostrum iure corrupti quas ut odit ad dolorem animi velit earum veniam fugit sint.
+                        Magnam, veritatis exercitationem ad itaque consectetur facilis mollitia dolor provident optio sequi, vero repellat a corrupti? Adipisci officia excepturi quisquam, aspernatur porro rem commodi dignissimos, aliquid fugit natus, nam eaque!
+                        Praesentium soluta neque laborum nostrum pariatur sit, libero, cupiditate cum aut a non nesciunt quaerat vero veniam commodi officiis accusamus tempore suscipit illo! Aliquid voluptatum quisquam odio, saepe consequuntur placeat.
+                        A quo fugit aliquam molestiae omnis, nemo earum! Quasi sequi obcaecati sed nobis veniam consequuntur nemo omnis aut, numquam nulla repellendus nihil impedit? Maiores numquam pariatur impedit, at illum placeat.
+                        Autem nesciunt dolorem ipsam, at ea soluta consectetur? Facilis, animi laboriosam harum magnam autem quod, necessitatibus maxime, excepturi provident unde ad quasi voluptate. Vel, distinctio facilis. Totam aliquam eius ut.</p>
+                        <a href="">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="features">
+            <h1>Features</h1>
+            <div>
+                <div class="favorites">
+                    <h4>Add to your library</h4>
+                </div>
+                <div class="like">
+                    <h4>Like</h4>
+                </div>
+                <div class="comment">
+                    <h4>Comment</h4>
+                </div>
+            </div>
+        </section>
+        <section id="prefer">
+        </section>
     </main>
 </body>
 </html>

@@ -1,0 +1,3 @@
+npx uglifyjs -c -m --mangle-props keep_quoted --warn --webkit src/index.js -o index.js
+npx uglifycss --expand-vars --ugly-comments --output enter.css ./style/enter.css
+npx serve

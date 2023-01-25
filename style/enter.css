@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
+
+@font-face {
+    font-family: "Minecraft Enchantment Table";
+    src: url(../fonts/minecraft-enchantment.ttf);
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
+}
+
+body {
+
+    background: #f2dcb1;
+
+}
+
+button {
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 0.22em 1.8em;
+    border: 0;
+    outline: 0;
+    font-size: 40px;
+    color: white;
+    background: #111;
+    cursor: pointer;
+    border-radius: 13px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    overflow: hidden;
+    transition: all 0.3s;
+
+}
+
+button:hover {
+    border-radius: 8px;
+}
+
+button:hover p {
+
+    background: -webkit-linear-gradient(45deg, #fffffc, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff, #ffc6ff, #ffadad);
+    background-size: 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 20s linear infinite;
+
+}
+
+@keyframes rainbow {
+
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 500% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+button:before {
+
+    background: transparent;
+    content: "";
+    position: absolute;
+    top: -90%;
+    right: -50%;
+    z-index: 3;
+    width: 20px;
+    height: 200%;
+    background: #ffffff26;
+    transform: rotateZ(-20deg);
+
+}
+
+button:hover:before {
+    animation: shine 0.5s;
+}
+
+@keyframes shine {
+    from {
+        right: -50%;
+    }
+
+    to {
+        right: 150%;
+    }
+}
+
+button:after {
+
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    bottom: 0;
+    border-radius: 13px;
+    transition: all 0.2s;
+
+}
+
+button:hover:after {
+    background: #222222cc;
+    border-radius: 8px;
+}
+
+filter {
+
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: brightness(0.5);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    pointer-events: none;
+
+}
+
+filter.darken {
+    pointer-events: all;
+    cursor: none;
+    animation: darken 1.5s forwards;
+}
+
+@keyframes darken {
+
+    from {
+
+        backdrop-filter: brightness(0.5);
+        z-index: -1;
+   
+    }
+
+    to {
+
+        backdrop-filter: brightness(0);
+        z-index: 100;
+   
+    }
+
+
+}
+
+section {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.text-container {
+
+    display: flex;
+    width: 100%;
+    white-space: nowrap;
+
+}
+
+.text-container .text {
+
+    white-space: break-spaces;
+    display: flex;
+    color: black;
+    font-weight: bold;
+    animation: scroll-text 120s linear infinite;
+
+}
+
+.text-container.reverse .text {
+
+    animation: second-scroll-text 120s linear infinite;
+
+}
+
+@keyframes scroll-text {
+
+    0% {
+
+        transform: translateX(0);
+   
+    }
+
+    100% {
+
+        transform: translateX(-100%);
+   
+    }
+
+
+}
+
+@keyframes second-scroll-text {
+
+    0% {
+
+        transform: translateX(-100%);
+   
+    }
+
+    100% {
+
+        transform: translateX(0);
+   
+    }
+
+
+}
+
+.text-container .text .word {
+    filter: blur(4px);
+    transition: all 0.2s;
+    z-index: 10;
+    cursor: context-menu;
+    font-size: 22px;
+    user-select: none;
+    -webkit-user-select: none;
+    text-transform: uppercase;
+}
+
+.text-container .text .word:hover {
+
+    filter: blur(0);
+    color: whitesmoke;
+    text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff;
+
+}
+
+.text-container .text a.word {
+
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+
+}
+
+.text-container .text a.word:hover {
+
+    filter: blur(0);
+    color: #707070;
+    text-shadow: 0 0 10px #858585, 0 0 15px #858585, 0 0 20px #858585;
+
+}
+
