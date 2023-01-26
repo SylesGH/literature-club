@@ -61,7 +61,7 @@ function slideUpChange() {
     if (window.location.hash === "") {
         slideUpButton.style.right = "-100%"
     } else {
-        slideUpButton.style.right = "0%"
+        slideUpButton.style.right = "-20%"
     }
 }
 

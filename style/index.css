@@ -100,7 +100,7 @@ enchantment {
     position: fixed;
     right: -10%;
     height: 100%;
-    width: 5vw;
+    width: 3vw;
     z-index: 9;
 }
 
@@ -225,19 +225,15 @@ enchantment {
     animation: centerToRight 1s ease forwards;
 }
 
-.slide-down.animate.reversed {
-    animation: centerToRight 1s ease forwards reverse;
-}
-
 @keyframes centerToRight {
     from {
-        right: 1000%;
+        right: 2000%;
         scale: 1;
         translate: 100%;
     }
 
     to {
-        right: 10%;
+        right: -20%;
         scale: 0.5;
         translate: 0;
     }
@@ -389,4 +385,122 @@ main #features > div {
     margin-top: 3rem;
     display: flex;
     justify-content: space-around;
+}
+
+main #features > div > div {
+    width: 30%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main #features > div > div h4 {
+    margin-bottom: 1rem;
+}
+
+main #features > div .card {
+    perspective: 1000px;
+    width: 100%;
+    height: 100%;
+}
+
+main #features > div .card > * {
+    transition: all 0.8s;
+}
+
+main #features > div .card:hover .inner-card {
+    transform: rotateY(180deg);
+}
+
+main #features > div .card .inner-card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+main #features > div .card .inner-card .card-face {
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.5rem;
+    user-select: none;
+    width: 100%;
+    height: 100%;
+}
+
+main #features > div .card .inner-card .front-face {
+    background: linear-gradient(-135deg, var(--fourth-color), var(--first-color));
+    box-shadow: 0 0 10px var(--fifth-color) inset;
+}
+
+main #features > div .card .inner-card .back-face {
+    padding: 2rem;
+    background: linear-gradient(-135deg, var(--first-color), var(--second-color));
+    box-shadow: 0 0 10px var(--fourth-color) inset;
+    transform: rotateY(180deg);
+}
+
+main #features > div .card .inner-card .front-face svg {
+    scale: 0.5;
+}
+
+footer {
+    width: 100%;
+    min-height: 40vh;
+    background: var(--fourth-color);
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
+
+    .sidebar, .slide-down {
+        display: none;
+    }
+
+    header {
+        min-height: var(--banner-height);
+    }
+
+    header section h1 {
+        font-size: 3rem;
+        -webkit-text-stroke: 1px var(--fourth-color);
+    }
+
+    header section h1, header section h1 + p {
+        position: relative;
+        padding: 0.5rem 1rem;
+    }
+
+    main section h1 {
+        font-size: 2.5rem;
+    }
+
+    main #recomended .posts {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        margin-top: 3rem;
+        overflow-x: hidden;
+    }
+
+    main #features > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main #features > div > div {
+        margin-top: 1rem;
+    }
+
+    main #features h4 {
+        font-size: 1rem;
+    }
 }
