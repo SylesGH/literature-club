@@ -4,13 +4,11 @@ fetch("./settings.json")
         document.title = data.title;
 }).catch((e) => console.log(e));
 
-window.onload = () => {
-    window.location.hash = ""
-    window.scroll(0, 0)
-}
-
 var link = document.querySelector("#links")
 var links = link.querySelectorAll("li")
+
+window.location.hash = ""
+window.scroll(0, 0)
 
 links.forEach(li => {
 
@@ -47,21 +45,21 @@ links.forEach(li => {
     
 })
 
+const slideDownButton = document.querySelector(".slide-down")
+const slideUpButton = document.querySelector(".slide-up")
+const sidebar = document.querySelector("nav.sidebar")
+
 function refresh(item) {
     
     item.classList.remove("active")
 
 }
 
-const slideDownButton = document.querySelector(".slide-down")
-const slideUpButton = document.querySelector(".slide-up")
-const sidebar = document.querySelector("nav.sidebar")
-
 function slideUpChange() {
     if (window.location.hash === "") {
         slideUpButton.style.right = "-100%"
     } else {
-        slideUpButton.style.right = "-20%"
+        slideUpButton.style.right = "-10%"
     }
 }
 
